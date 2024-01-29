@@ -29,13 +29,14 @@ struct RegisterView: View {
                     .autocapitalization(.none)
                     .autocorrectionDisabled()
                 
-                TextField("Password", text: $viewModel.password)
+                SecureField("Password", text: $viewModel.password)
                     .textFieldStyle(DefaultTextFieldStyle())
                 
                 // Create a button
                 TLButton(title: "Create An Account", background: .green
                 ){
                   // Attemp
+                    viewModel.register()
                 }
             }
             .scrollContentBackground(.hidden)
